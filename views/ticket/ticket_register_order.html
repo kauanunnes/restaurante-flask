@@ -1,0 +1,79 @@
+<!-- home.html -->
+{% extends "base.html" %} {% block content %}
+<div class="center mt-4">
+  <div
+    class="container forms shadow-sm p-3 mb-5 bg-white border border-secondary rounded"
+  >
+    <h2 class="pb-3">Registre um novo pedido em uma comanda</h2>
+    <form
+      class="row g-3 justify-content-center"
+      method="post"
+      id="info"
+      name="info"
+    >
+      <div class="col-12 m-1">
+        <label for="inputTicketCode" class="form-label">Código da comanda</label>
+        <select class="form-select" name="inputTicketCode">
+          <option selected>Selecione uma comanda</option>
+          {% for ticket in ticket_array %}
+          {{ticket_array}}
+          <option value="{{ticket.ticket_id}}">{{ticket.ticket_id}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="col-6 mt-1 mb-1">
+        <label for="inputProduct" class="form-label">Produto</label>
+        <input
+          type="text"
+          class="form-control"
+          name="inputProduct"
+          id="inputProduct"
+        />
+      </div>
+      <div class="col-6 mt-1 mb-1">
+        <label for="inputQuantity" class="form-label"
+          >Quantidade do produto</label
+        >
+        <input
+          type="number"
+          min="1"
+          class="form-control"
+          name="inputQuantity"
+          id="inputQuantity"
+        />
+      </div>
+      <div class="col-12 m-1">
+        <label for="inputServiceCode" class="form-label">Código do garçom</label>
+        <input
+          type="text"
+          class="form-control"
+          name="inputServiceCode"
+          id="inputServiceCode"
+        />
+      </div>
+      <div class="col-6 mt-1 mb-1">
+        <label for="inputDateOrder" class="form-label">Data do registro</label>
+        <input
+          type="date"
+          class="form-control"
+          name="inputDateOrder"
+          id="inputDateOrder"
+        />
+      </div>
+      <div class="col-6 mt-1 mb-1">
+        <label for="inputHourTicket" class="form-label">Hora do registro</label>
+        <input
+          type="time"
+          class="form-control"
+          name="inputHourTicket"
+          id="inputHourTicket"
+        />
+      </div>
+
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary mt-2">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

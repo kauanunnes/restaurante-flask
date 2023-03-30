@@ -1,0 +1,32 @@
+<!-- home.html -->
+{% extends "base.html" %} {% block content %}
+<div class="center mt-4">
+  <div class="container">
+    <h2 pb-2>Listagem de comandas</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Código do cliente</th>
+          <th scope="col">Data da comanda</th>
+          <th scope="col">Situação da comanda</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ticket in ticket_array %}
+        <tr>
+          <th scope="row">{{ticket.ticket_id}}</th>
+          <td>{{ticket.client_code}}</td>
+          <td>{{ticket.date_ticket}}</td>
+          {% if ticket.is_paid %}
+            <td>Pago</td>
+          {% else %}
+            <td>Não pago</td>
+          {% endif %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

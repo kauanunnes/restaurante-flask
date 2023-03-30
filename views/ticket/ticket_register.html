@@ -1,0 +1,40 @@
+<!-- home.html -->
+{% extends "base.html" %} {% block content %}
+<div class="center mt-4">
+  <div
+    class="container forms shadow-sm p-3 mb-5 bg-white border border-secondary rounded"
+  >
+    <h2 class="pb-3">Registre uma nova comanda</h2>
+    <form
+      class="row g-3 justify-content-center"
+      method="post"
+      id="info"
+      name="info"
+    >
+      <div class="col-12 m-1">
+        <label for="inputClientCode" class="form-label"
+          >Código do cliente</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          name="inputClientCode"
+          id="inputClientCode"
+        />
+      </div>
+      <div class="col-12 m-1">
+        <label for="inputDateTicket" class="form-label">Data da comanda</label>
+        <input
+          type="date"
+          class="form-control"
+          name="inputDateTicket"
+          id="inputDateTicket"
+        />
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary mt-2">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
